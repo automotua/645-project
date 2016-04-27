@@ -22,10 +22,31 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="phase1-q1" />
+        <module name="phase1-q2" />
+        <module name="phase2-hbase" />
+        <module name="phase2-mysql" />
+        <module name="phase2-q3" />
+        <module name="phase2-q4" />
+        <module name="phase3-lb" />
+        <module name="phase3-mysql" />
+        <module name="phase3-q5" />
+        <module name="phase3-q6" />
         <module name="yelp-analytics" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="phase1-q1" target="1.5" />
+      <module name="phase1-q2" target="1.5" />
+      <module name="phase2-hbase" target="1.5" />
+      <module name="phase2-mysql" target="1.5" />
+      <module name="phase2-q3" target="1.5" />
+      <module name="phase2-q4" target="1.5" />
+      <module name="phase3-lb" target="1.5" />
+      <module name="phase3-mysql" target="1.5" />
+      <module name="phase3-q5" target="1.5" />
+      <module name="phase3-q6" target="1.5" />
+      <module name="twitter-analytics" target="1.5" />
       <module name="yelp-analytics" target="1.5" />
     </bytecodeTargetLevel>
   </component>

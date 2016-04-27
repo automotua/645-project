@@ -2,6 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/projects/cc-project/phase1-q1/phase1-q1.iml" filepath="$USER_HOME$/projects/cc-project/phase1-q1/phase1-q1.iml" group="twitter-analytics and modules" />
+      <module fileurl="file://$USER_HOME$/projects/cc-project/phase1-q2/phase1-q2.iml" filepath="$USER_HOME$/projects/cc-project/phase1-q2/phase1-q2.iml" group="twitter-analytics and modules" />
+      <module fileurl="file://$USER_HOME$/projects/cc-project/phase2-hbase/phase2-hbase.iml" filepath="$USER_HOME$/projects/cc-project/phase2-hbase/phase2-hbase.iml" group="twitter-analytics and modules" />
+      <module fileurl="file://$USER_HOME$/projects/cc-project/phase2-mysql/phase2-mysql.iml" filepath="$USER_HOME$/projects/cc-project/phase2-mysql/phase2-mysql.iml" group="twitter-analytics and modules" />
+      <module fileurl="file://$USER_HOME$/projects/cc-project/phase2-q3/phase2-q3.iml" filepath="$USER_HOME$/projects/cc-project/phase2-q3/phase2-q3.iml" group="twitter-analytics and modules" />
+      <module fileurl="file://$USER_HOME$/projects/cc-project/phase2-q4/phase2-q4.iml" filepath="$USER_HOME$/projects/cc-project/phase2-q4/phase2-q4.iml" group="twitter-analytics and modules" />
+      <module fileurl="file://$USER_HOME$/projects/cc-project/phase3-lb/phase3-lb.iml" filepath="$USER_HOME$/projects/cc-project/phase3-lb/phase3-lb.iml" group="twitter-analytics and modules" />
+      <module fileurl="file://$USER_HOME$/projects/cc-project/phase3-mysql/phase3-mysql.iml" filepath="$USER_HOME$/projects/cc-project/phase3-mysql/phase3-mysql.iml" group="twitter-analytics and modules" />
+      <module fileurl="file://$USER_HOME$/projects/cc-project/phase3-q5/phase3-q5.iml" filepath="$USER_HOME$/projects/cc-project/phase3-q5/phase3-q5.iml" group="twitter-analytics and modules" />
+      <module fileurl="file://$USER_HOME$/projects/cc-project/phase3-q6/phase3-q6.iml" filepath="$USER_HOME$/projects/cc-project/phase3-q6/phase3-q6.iml" group="twitter-analytics and modules" />
+      <module fileurl="file://$USER_HOME$/projects/cc-project/twitter-analytics.iml" filepath="$USER_HOME$/projects/cc-project/twitter-analytics.iml" group="twitter-analytics and modules" />
       <module fileurl="file://$PROJECT_DIR$/yelp-analytics.iml" filepath="$PROJECT_DIR$/yelp-analytics.iml" />
     </modules>
   </component>
