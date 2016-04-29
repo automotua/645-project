@@ -98,8 +98,9 @@ public class Business {
 	public String toString() {
 		String retStr = "Business id: " + this.bizId + "\nBusiness name: " + this.name + "\nFull Address: " + this
 				.fullAddress
-				+ "\nCategories: " + this.categories + "\nCity: " + this.city + "\nState: " + this.state + "\nPrice " +
-				"range: " + "\nStars: " + this.stars;
+				+ "\nCategories: " + this.categories + "\nCity: " + this.city + "\nState: " + this.state + "\nStars: "
+				+ this.stars + "\nOpen Time: " + this.openTime + "\nClose Time: " + this
+				.closeTime + "\nPrice Range: ";
 		for (int i = 0; i < priceRange; i++) {
 			retStr += "$";
 		}

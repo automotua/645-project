@@ -32,6 +32,12 @@
         <module name="phase3-mysql" />
         <module name="phase3-q5" />
         <module name="phase3-q6" />
+      </profile>
+      <profile default="false" name="Annotation profile for yelp-analytics" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="yelp-analytics" />
       </profile>
     </annotationProcessing>
@@ -47,7 +53,7 @@
       <module name="phase3-q5" target="1.5" />
       <module name="phase3-q6" target="1.5" />
       <module name="twitter-analytics" target="1.5" />
-      <module name="yelp-analytics" target="1.5" />
+      <module name="yelp-analytics" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

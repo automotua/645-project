@@ -17,11 +17,11 @@ public class App {
 	// Initialize parameters
 	private static Connection qConnect = null;
 
-	private static final String DB_ELB_HOST = "";
+	private static final String DB_ELB_HOST = "ec2-54-85-146-159.compute-1.amazonaws.com";
 	private static final String DB_NAME = "team645db1";
-	private static final String BIZ_TABLE_NAME = "mybusiness";
-	private static final String USER_TABLE_NAME = "myuser";
-	private static final String REVIEW_TABLE_NAME = "myreview";
+	private static final String BIZ_TABLE_NAME = "MYBUSINESS";
+	private static final String USER_TABLE_NAME = "MYUSER";
+	private static final String REVIEW_TABLE_NAME = "MYREVIEW";
 	private static final String DB_USERNAME = "team645";
 	private static final String DB_PASSWORD = "645termproject";
 	private static final int EARTH_R = 6371;
@@ -59,9 +59,15 @@ public class App {
 				if (requestURI.equals("/index.html")) {
 					exchange.getResponseSender().send("Server is up!");
 				} else if (requestURI.equals("/q_biz")) {
+					long startTime=System.nanoTime();
 					handleQBiz(exchange, mp);
+					long endTime=System.nanoTime();
+					System.out.println("run time: " + (endTime - startTime) + "ns");
 				} else if (requestURI.equals("/q_review")) {
+					long startTime=System.nanoTime();
 					handleQReview(exchange, mp);
+					long endTime=System.nanoTime();
+					System.out.println("run time: " + (endTime - startTime) + "ns");
 				} else {
 					exchange.getResponseSender().send(
 							"Sorry, this query is not supported yet.");
@@ -76,15 +82,15 @@ public class App {
 	private static void handleQBiz(HttpServerExchange exchange,
 								   Map<String, Deque<String>> mp) {
 		if (!mp.isEmpty()) {
-			String category = mp.get("category").peek();
-			String city = mp.get("city").peek();
-			String state = mp.get("state").peek();
-			String time = mp.get("time").peek();
-			String latStr = mp.get("lat").peek();
-			String lngStr = mp.get("lng").peek();
-			String dist = mp.get("dist").peek();
-			String minStars = mp.get("min_stars").peek();
-			String maxPrice = mp.get("max_price").peek();
+			String category = mp.get("category") == null ? null : mp.get("category").peek();
+			String city = mp.get("city") == null ? null : mp.get("city").peek();
+			String state = mp.get("state") == null ? null : mp.get("state").peek();
+			String time = mp.get("time") == null ? null : mp.get("time").peek();
+			String latStr = mp.get("lat") == null ? null : mp.get("lat").peek();
+			String lngStr = mp.get("lng") == null ? null : mp.get("lng").peek();
+			String dist = mp.get("dist") == null ? null : mp.get("dist").peek();
+			String minStars = mp.get("min_stars") == null ? null : mp.get("min_stars").peek();
+			String maxPrice = mp.get("max_price") == null ? null : mp.get("max_price").peek();
 
 			exchange.getResponseHeaders().put(Headers.CONTENT_TYPE,
 					"text/plain");
@@ -101,8 +107,9 @@ public class App {
 				sb.append("\n");
 			}
 			exchange.getResponseSender().send(sb.toString());
+		} else {
+			exchange.getResponseSender().send("Sorry, please give proper parameters.");
 		}
-		exchange.getResponseSender().send("Sorry, please give proper parameters.");
 	}
 
 	private static List<Business> filterByDistance(List<Business> bizList, double lat, double lng, int d) {
@@ -151,7 +158,7 @@ public class App {
 			query += "and (state = '" + state + "') ";
 		}
 		if (time != null) {
-			query += "and (strcmp('open', '" + time + "') <= 0 and strcmp('close', '" + time + "') >= 0) ";
+			query += "and (strcmp(open, '" + time + "') <= 0 and strcmp(close, '" + time + "') >= 0) ";
 		}
 		if (minStars != null) {
 			query += "and (stars >= " + Integer.parseInt(minStars) + ") ";
@@ -231,8 +238,9 @@ public class App {
 				sb.append("\n");
 			}
 			exchange.getResponseSender().send(sb.toString());
+		} else {
+			exchange.getResponseSender().send("Sorry, please give proper parameters.");
 		}
-		exchange.getResponseSender().send("Sorry, please give proper parameters.");
 	}
 
 	private static Review createReviewFromResult(ResultSet resultSet) {
@@ -240,7 +248,7 @@ public class App {
 		try {
 			r.setContent(resultSet.getString("content"));
 			r.setDate(resultSet.getString("date"));
-			r.setStars(resultSet.getDouble("stars"));
+			r.setStars(resultSet.getInt("stars"));
 			r.setUserName(resultSet.getString("username"));
 		} catch (SQLException e) {
 			e.printStackTrace();

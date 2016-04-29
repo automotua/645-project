@@ -7,7 +7,7 @@ public class Review {
 	public Review() {
 	}
 
-	private double stars;
+	private int stars;
 	private String date;
 	private String content;
 	private String userName;
@@ -28,11 +28,11 @@ public class Review {
 		return date;
 	}
 
-	public void setStars(double stars) {
+	public void setStars(int stars) {
 		this.stars = stars;
 	}
 
-	public double getStars() {
+	public int getStars() {
 		return stars;
 	}
 
